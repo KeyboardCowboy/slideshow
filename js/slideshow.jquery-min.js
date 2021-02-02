@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=$(".slideshow-image-wrapper"),a=1e4,s=0,i=0,t=e.length;console.log("There are "+t+" images in the slideshow."),e.eq(s).addClass("active"),setInterval(function(){i=s,s=s>=t?0:s+1,e.eq(i).removeClass("active"),e.eq(s).addClass("active")},a)});

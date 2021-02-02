@@ -1,0 +1,45 @@
+html, body, #slideshow-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#slideshow-wrapper {
+  background-color: maroon;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slideshow-image-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .slideshow-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    // box-shadow: 0 0 5px 5px rgba(0,0,0,.38);
+    display: inline-block;
+  }
+
+  opacity: 0;
+  transform: scale(1) rotate(0);
+  // Match the transform duration to the slide duration.
+  transition: opacity 1s ease-in-out, transform 10s ease-in-out;
+
+  &.active {
+    transform: scale(1.38) rotate(-10deg);
+    opacity: 1;
+
+    &:nth-child(odd) {
+      transform: scale(1.38) rotate(-5deg);
+    }
+    &:nth-child(even) {
+      transform: scale(1.38) rotate(5deg);
+    }
+  }
+}
